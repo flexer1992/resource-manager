@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 # Собираем
-RUN dotnet publish -c Release -o out
+RUN dotnet publish "./Interview/Interview.csproj" -c Release -o /app/out
 
 # Runtime image
 FROM mcr.microsoft.com/dotnet/runtime:8.0
