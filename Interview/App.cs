@@ -24,13 +24,23 @@ namespace Interview
 
             if (resourcesToDownload.Count > 0)
             {
-                await _resourceManager.DownloadResourcesAsync(resourcesToDownload);    
+                await _resourceManager.DownloadResourcesAsync(resourcesToDownload);
             }
             else
             {
                 Console.WriteLine("No resource update required");
             }
-            
+
+
+            // Display 6 images
+            var imagePaths = _manifestService.AppManifest.GetFilesPaths();
+
+            Console.WriteLine("\nDisplaying 6 images:");
+            for (int i = 0; i < 6; i++)
+            {
+                string path = i < imagePaths.Count ? imagePaths[i] : "placeholder.png";
+                Console.WriteLine($"Image {i + 1}: {path}");
+            }
         }
     }
 }

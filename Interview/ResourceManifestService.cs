@@ -8,6 +8,8 @@ namespace Interview
 
         private readonly DownloadService _downloadService;
         private readonly ResourceManager _resourceManager;
+        
+        public AppManifest AppManifest => _appManifest;
 
         public ResourceManifestService(DownloadService downloadService, ResourceManager resourceManager)
         {
