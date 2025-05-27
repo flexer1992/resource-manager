@@ -6,8 +6,7 @@ namespace Interview.Tests
         public async Task App_Run_ShouldDownloadAndPurgeAssets_Correctly()
         {
             // Настраиваем переменные окружения
-            Environment.SetEnvironmentVariable("BASE_URL",
-                "https://geo.karateka-team.ru"); // Настраиваем переменные окружения
+            Environment.SetEnvironmentVariable("BASE_URL", "https://geo.karateka-team.ru"); 
             // Говорим приложению, что мы «текущая версия» v1, 
             Environment.SetEnvironmentVariable("APP_VERSION", "v1");
 
