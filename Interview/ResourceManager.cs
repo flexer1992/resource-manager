@@ -16,7 +16,7 @@ namespace Interview
 
             CheckAndCreateFolder(Constants.ResourcesPath, nameof(Constants.ResourcesPath));
             CheckAndCreateFolder(Constants.ManifestsPath, nameof(Constants.ManifestsPath));
-            CheckAndCreateFolder(Constants.AssetsPath, nameof(Constants.AssetsPath));
+            CheckAndCreateFolder(Constants.ResourcesPath, nameof(Constants.AssetsPath));
 
             Console.WriteLine("[Resources]: Setup directories finished");
         }

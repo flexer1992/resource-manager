@@ -4,6 +4,14 @@ namespace Interview
 {
     public class FileHashUtils
     {
+        public static async Task<string> GetMd5FromFileAsync(string filePath)
+        {
+            using var md5 = MD5.Create();
+            await using var stream = File.OpenRead(filePath);
+            var hash = await Task.Run(() => md5.ComputeHash(stream));
+            return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+        }
+
         public static async Task<DownloadTaskInfo?> ComputeMd5Async(ManifestItem manifestItem)
         {
             try
@@ -16,11 +24,7 @@ namespace Interview
                 }
 
 
-                using var md5 = MD5.Create();
-                await using var stream = File.OpenRead(filePath);
-
-                var hash = await Task.Run(() => md5.ComputeHash(stream));
-                string fileHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                var fileHash = await GetMd5FromFileAsync(filePath);
 
                 if (!fileHash.Equals(manifestItem.md5))
                 {

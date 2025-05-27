@@ -4,7 +4,7 @@ namespace Interview
     {
         public static string GetFilePath(string filePath)
         {
-            return $"{Constants.AssetsPath}{filePath}";
+            return $"{Constants.ResourcesPath}{filePath}";
         }
     }
 }

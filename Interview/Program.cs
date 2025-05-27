@@ -11,6 +11,7 @@ internal class Program
     {
         Console.WriteLine("Application started.");
         Env.Load();
+     
         DownloadService downloadService = new DownloadService();
         VersionManager versionManager = new VersionManager(downloadService);
         ResourceManager resourceManager = new ResourceManager(downloadService);

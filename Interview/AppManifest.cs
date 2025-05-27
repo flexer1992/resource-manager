@@ -35,7 +35,7 @@ namespace Interview
 
         public List<string> GetFilesPaths()
         {
-            return Resources.Select(item => $"{Constants.AssetsPath}" + item.path).ToList();
+            return Resources.Select(item => $"{Constants.ResourcesPath}" + item.path).ToList();
         }
     }
 }
