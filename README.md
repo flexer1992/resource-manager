@@ -18,6 +18,7 @@ BASE_URL=https://base.url
 ```
 
 ### 3. Построй Docker-образ
+Соберите проект и автоматически прогоните тесты:
 ```bash
 docker build -f Interview/Dockerfile -t resource-manager .
 ```
