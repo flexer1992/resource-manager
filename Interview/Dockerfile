@@ -13,9 +13,6 @@ RUN dotnet build --no-restore
 RUN dotnet test --no-build --verbosity normal
 
 
-# Запуск тестов
-RUN dotnet test --no-build --verbosity normal
-
 # Публикация только основного проекта
 FROM build-test AS publish
 RUN dotnet publish "./Interview/Interview.csproj" -c Release -o /app/out
